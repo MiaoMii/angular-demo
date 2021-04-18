@@ -1,0 +1,66 @@
+<fieldset>
+  <legend>引入静态图片</legend>
+  <img src="assets/images/img.png" alt="" />
+</fieldset>
+
+<fieldset>
+  <legend>循环数据显示索引值</legend>
+  <div *ngFor="let item of arr; let k = index">索引{{ k }}</div>
+</fieldset>
+
+<fieldset>
+  <legend>条件判断语句</legend>
+  <div *ngIf="isShow">显示</div>
+  <div *ngIf="!isShow">不显示</div>
+</fieldset>
+
+<fieldset>
+  <legend>ngSwitch使用</legend>
+  <div [ngSwitch]="orderStatus">
+    <span *ngSwitchCase="1">已经支付</span>
+    <span *ngSwitchCase="2">支付并且确认</span>
+    <span *ngSwitchCase="3">已发货</span>
+    <span *ngSwitchCase="4">已收货</span>
+    <span *ngSwitchDefault>已收货</span>
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend>ngClass和ngStyle</legend>
+  <div [ngClass]="{ 'test-ng-class': true }">红色的字</div>
+  <div [ngClass]="{ 'test-ng-class': redFlag }">红色的字 {{ redFlag }}</div>
+  <!-- 第二个红色-->
+  <div
+    *ngFor="let item of arr; let k = index"
+    [ngClass]="{ 'test-ng-class': k === 1 }"
+  >
+    {{ item }}
+  </div>
+  <!--    ngStyle-->
+  <div [ngStyle]="{ color: 'red' }">ngStyle 绑定</div>
+  <div [ngStyle]="{ color: blueFontColor }">ngStyle 变量 绑定</div>
+</fieldset>
+
+<fieldset>
+  <legend>管道使用</legend>
+  <div>
+    <p>格式化时间</p>
+    <p>today | date: "yyyy-mm-dd hh:mm:ss":</p>
+    {{ today | date: "yyyy-mm-dd hh:mm:ss" }}
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend>事件执行</legend>
+  <button (click)="run()">点击方法</button>
+</fieldset>
+
+<fieldset>
+  <legend>表单事件</legend>
+  <input (keydown.enter)="keydown($event)" />
+</fieldset>
+
+<fieldset>
+  <legend>双向数据绑定 mvvm</legend>
+  <input [(ngModel)]="keywords" /> {{ keywords }}
+</fieldset>

@@ -1,0 +1,28 @@
+<fieldset>
+    <legend>普通数据传递</legend>
+    <p>{{title}}</p>
+    <h2>{{userInfo.name}}</h2>
+</fieldset>
+
+<fieldset>
+    <legend>绑定html属性</legend>
+    <!-- 绑定属性 -->
+    <h1 [title]="infoTitle">{{userInfo.info}}</h1>
+</fieldset>
+
+<fieldset>
+    <legend>解析html</legend>
+    <div [innerHTML]="content"></div>
+</fieldset>
+
+
+<fieldset>
+    <legend>允许简单的运算</legend>
+    <div>1+2={{1+2}}</div>
+</fieldset>
+
+<fieldset>
+    <legend>angular中的循环</legend>
+    <div *ngFor="let item of arr">{{item}}</div>
+    <div *ngFor="let item of arr1">新闻名称{{item.name}}时间: {{item.time}}</div>
+</fieldset>
